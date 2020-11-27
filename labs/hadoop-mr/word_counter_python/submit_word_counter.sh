@@ -59,7 +59,8 @@ mapReduceArguments=(
   "-reducer reducer.py"
   "-input ${INPUT_PATH}"
   "-output ${OUTPUT_PATH}"
-  "-files ${MAPPER_PATH},${REDUCER_PATH}"
+  "-file ${MAPPER_PATH}"
+  "-file ${REDUCER_PATH}"
 )
 
 SUBMIT_CMD="${EXECUTOR} jar /usr/lib/hadoop-mapreduce/hadoop-streaming-2.10.0.jar ${mapReduceArguments[@]}"
