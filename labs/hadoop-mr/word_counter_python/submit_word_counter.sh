@@ -57,7 +57,7 @@ echo "-------------------------------------"
 mapReduceArguments=(
   "-mapper mapper.py"
   "-reducer reducer.py"
-  "-input ${$INPUT_PATH}"
+  "-input ${INPUT_PATH}"
   "-output ${OUTPUT_PATH}"
   "-files ${MAPPER_PATH},${REDUCER_PATH}"
 )
