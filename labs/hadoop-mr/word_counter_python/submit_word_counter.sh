@@ -35,7 +35,6 @@ then
 fi
 
 hadoop fs -rm -R $OUTPUT_PATH
-hdfs dfs -ls ${INPUT_PATH}
 
 THIS_FILE=$(readlink -f "$0")
 THIS_PATH=$(dirname "$THIS_FILE")
@@ -52,13 +51,15 @@ echo "-------------------------------------"
 echo "INPUT_PATH = $INPUT_PATH"
 echo "OUTPUT_PUTH = $OUTPUT_PATH"
 echo "-------------------------------------"
+hdfs dfs -ls ${INPUT_PATH}
+echo "-------------------------------------"
 
 mapReduceArguments=(
   "-mapper mapper.py"
   "-reducer reducer.py"
-  "-output nfldata/pythonoutput"
-  "-files ${MAPPER_PATH}"
-  "-files ${REDUCER_PATH}"
+  "-input ${$INPUT_PATH}"
+  "-output ${OUTPUT_PATH}"
+  "-files ${MAPPER_PATH},${REDUCER_PATH}"
 )
 
 SUBMIT_CMD="${EXECUTOR} jar /usr/lib/hadoop-mapreduce/hadoop-streaming-2.10.0.jar ${mapReduceArguments[@]}"
