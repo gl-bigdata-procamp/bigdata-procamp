@@ -61,7 +61,7 @@ mapReduceArguments=(
   "-file ${REDUCER_PATH}"
 )
 
-SUBMIT_CMD="${EXECUTOR} jar usr/lib/hadoop-mapreduce/hadoop-streaming-2.10.0.jar ${mapReduceArguments[@]}"
+SUBMIT_CMD="${EXECUTOR} jar /usr/lib/hadoop-mapreduce/hadoop-streaming-2.10.0.jar ${mapReduceArguments[@]}"
 echo "$SUBMIT_CMD"
 ${SUBMIT_CMD}
 
