@@ -34,6 +34,9 @@ then
   EXECUTOR="yarn"
 fi
 
+hadoop fs -rm -R $OUTPUT_PATH
+hdfs dfs -ls ${INPUT_PATH}
+
 THIS_FILE=$(readlink -f "$0")
 THIS_PATH=$(dirname "$THIS_FILE")
 BASE_PATH=$(readlink -f "$THIS_PATH/../")
