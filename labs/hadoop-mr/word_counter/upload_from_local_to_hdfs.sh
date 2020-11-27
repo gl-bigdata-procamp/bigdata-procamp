@@ -1,5 +1,5 @@
 usage() {
-  echo -e "Usage: $0 [-i <path>] [-o <path>]\n"\
+  echo -e "Usage: $0 [-f <format>] [-o <hdfs path>]\n"\
        "where\n"\
        "-f defines format of data to upload\n"\
        "-d defines an hdfs destination path\n"\
@@ -8,7 +8,7 @@ usage() {
   exit 1
 }
 
-while getopts ":i:o:e:" opt; do
+while getopts ":f:d:" opt; do
     case "$opt" in
         f)  FORMAT=${OPTARG} ;;
         d)  HDFS_PATH=${OPTARG} ;;
