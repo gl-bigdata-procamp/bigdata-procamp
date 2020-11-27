@@ -36,7 +36,7 @@ fi
 THIS_FILE=$(readlink -f "$0")
 THIS_PATH=$(dirname "$THIS_FILE")
 BASE_PATH=$(readlink -f "$THIS_PATH/../")
-APP_PATH="$THIS_PATH/failing-1.0-jar-with-dependencies.jarr"
+APP_PATH="$THIS_PATH/failing-1.0-jar-with-dependencies.jar"
 
 hadoop fs -rm -R $INPUT_PATH $OUTPUT_PATH
 hadoop fs -mkdir -p $INPUT_PATH
