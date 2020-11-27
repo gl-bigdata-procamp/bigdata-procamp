@@ -23,7 +23,7 @@
 
 > cd bigdata-procam/labs/hadoop-mr
 
-5. There are 4 demo projects:
+5. There are 4 demo applications (projects):
 - failing
 - stuck
 - word_counter
