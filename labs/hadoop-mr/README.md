@@ -43,3 +43,19 @@ In order to reasseble an application jar you need:
 >- go to an example source dir 
 >- execute `mvn clean package`
 >- find output artifact under `target` in an example `source` dir 
+
+
+## Lab Homework
+
+### Prepare data
+
+- Create a [Cloud Storage](https://cloud.google.com/storage/docs/creating-buckets) bucket 
+- Download [source data](https://www.kaggle.com/usdot/flight-delays)
+- Upload extracted data to the created Cloud Storage bucket in some folder
+- Check out URI to the files (ie `gs://globallogic-procamp-bigdata-datasets/2015_Flight_Delays_and_Cancellations/flights.csv`)
+
+### Tasks
+
+1. Find the top 5 airlines with greatest average DEPARTURE_DELAY. Show Airline code (IATA_CODE), Airline Name and average DEPARTURE_DELAY
+
+
