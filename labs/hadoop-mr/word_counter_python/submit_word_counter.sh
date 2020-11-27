@@ -61,6 +61,7 @@ mapReduceArguments=(
   "-output ${OUTPUT_PATH}"
   "-file ${MAPPER_PATH}"
   "-file ${REDUCER_PATH}"
+  "-numReduceTasks 1"
 )
 
 SUBMIT_CMD="${EXECUTOR} jar /usr/lib/hadoop-mapreduce/hadoop-streaming-2.10.0.jar ${mapReduceArguments[@]}"
