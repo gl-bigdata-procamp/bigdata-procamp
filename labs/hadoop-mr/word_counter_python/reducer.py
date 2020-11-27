@@ -1,40 +1,39 @@
+#!/usr/bin/env python
+"""reducer.py"""
+
 import sys
 
-# Example input (ordered by key)
-# FALSE 1
-# FALSE 1
-# TRUE 1
-# TRUE 1
-# UNKNOWN 1
-# UNKNOWN 1
+current_word = None
+current_count = 0
+word = None
 
-# keys come grouped together
-# so we need to keep track of state a little bit
-# thus when the key changes (turf), we need to reset
-# our counter, and write out the count we've accumulated
-
-last_turf = None
-turf_count = 0
-
+# input comes from STDIN
 for line in sys.stdin:
-
+    # remove leading and trailing whitespace
     line = line.strip()
-    turf, count = line.split('\t')
 
-    count = int(count)
-    # if this is the first iteration
-    if not last_turf:
-        last_turf = turf
+    # parse the input we got from mapper.py
+    word, count = line.split('\t', 1)
 
-    # if they're the same, log it
-    if turf == last_turf:
-        turf_count += count
+    # convert count (currently a string) to int
+    try:
+        count = int(count)
+    except ValueError:
+        # count was not a number, so silently
+        # ignore/discard this line
+        continue
+
+    # this IF-switch only works because Hadoop sorts map output
+    # by key (here: word) before it is passed to the reducer
+    if current_word == word:
+        current_count += count
     else:
-        # state change (previous line was k=x, this line is k=y)
-        result = [last_turf, turf_count]
-        print('\t'.join(str(v) for v in result))
-        last_turf = turf
-        turf_count = 1
+        if current_word:
+            # write result to STDOUT
+            print '%s\t%s' % (current_word, current_count)
+        current_count = count
+        current_word = word
 
-# this is to catch the final counts after all records have been received.
-print('\t'.join(str(v) for v in [last_turf, turf_count]))
+# do not forget to output the last word if needed!
+if current_word == word:
+    print '%s\t%s' % (current_word, current_count)
