@@ -20,6 +20,7 @@ if [[ -z "$HDFS_PATH" ]];
 then
   HDFS_PATH="/bdpc/hadoop_mr/word_count/input"
   hadoop fs -rm -R "$HDFS_PATH"
+  hdfs dfs -mkdir -p "$HDFS_PATH"
 fi
 
 THIS_FILE=$(readlink -f "$0")
