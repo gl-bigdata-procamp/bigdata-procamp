@@ -5,3 +5,4 @@ To run:
  - It can be executed with default parameters
   > ./submit_failing.sh
  - if it is not executable run `chmod +x submit_failing.sh`
+ 
