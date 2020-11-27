@@ -29,7 +29,7 @@ BASE_PATH=$(readlink -f "$THIS_PATH/../")
 APP_PATH="$THIS_PATH/word_counter-1.0-jar-with-dependencies.jar"
 
 if [ "${FORMAT}" = 'txt' ]; then
-  LOCAL_PATH="${BASE_PATH}/../data/word_count"
+  LOCAL_PATH="${BASE_PATH}/data/word_count"
 else
   LOCAL_PATH="${BASE_PATH}/data/word_count_gzip"
 fi
