@@ -49,7 +49,7 @@
 
 ### Tasks
 
-1. Find top 5 airlines with the greatest average DEPARTURE_DELAY. Show Airline code (IATA_CODE), Airline Name and average DEPARTURE_DELAY
+1. Find top 5 airlines with the greatest average DEPARTURE_DELAY. Show Airline code (IATA_CODE), Airline Name and average DEPARTURE_DELAY and save the result in another Hive table
    
  > Hint: You may want to create tables for the data files
 
