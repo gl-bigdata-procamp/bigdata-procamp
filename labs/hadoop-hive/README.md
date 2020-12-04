@@ -11,13 +11,13 @@
 1. Start GCP console (if you don't have GCP CLI on your host machine)
 2. Connect to your Dataproc cluster master node 
 
-  > `gcloud compute ssh procamp-cluster-m --zone=us-east1-b --project=[YOUR PROJECT ID]`
+  >  \> git push --set-upstream origin HF-HIVE-1`gcloud compute ssh procamp-cluster-m --zone=us-east1-b --project=[YOUR PROJECT ID]`
 
 **Note**: It is supposed your Dataproc cluster name is `procamp-cluster` and zone `us-east1-b`
 
 3. Launch Hive CLI
 
- > hive
+ > \> hive
 
 4. List existing database with `SHOW DATABASES;`
 
@@ -41,14 +41,16 @@
 
   > `gcloud compute ssh procamp-cluster-m --zone=us-east1-b --project=[YOUR PROJECT ID]`
 
-- Use `hadoop discp` or `hadoop fs -cp` or `hdfs dfs -cp` to copy the data from Cloud Storage to Hadoop (Dataproc) HDFS
+- Copy the data from Cloud Storage to Hadoop (Dataproc) HDFS 
 
- >  Don't forget to recall the commands from the first lecture on Hadoop fundamentals
+ > Hint: Use `hadoop discp` or `hadoop fs -cp` or `hdfs dfs -cp`
+
+ > Reminder: Don't forget to recall the commands from the first lecture on Hadoop fundamentals
 
 ### Tasks
 
 1. Find top 5 airlines with the greatest average DEPARTURE_DELAY. Show Airline code (IATA_CODE), Airline Name and average DEPARTURE_DELAY
    
- > You may want to create tables for the data files
+ > Hint: You may want to create tables for the data files
 
 2. Describe how you would test the script (implemented solution is a great bonus)
