@@ -53,4 +53,6 @@
    
  > Hint: You may want to create tables for the data files
 
+ > Hint: Use DESCRIBE command to find out details about Hive entities
+
 2. Describe how you would test the script (implemented solution is a great bonus)
