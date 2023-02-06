@@ -82,12 +82,12 @@ resource "google_dataproc_cluster" "procamp_cluster" {
     }
 
     initialization_action {
-      script      = "gs://procamp-infra/initialization-actions/nifi/nifi.sh"
+      script      = "gs://infra/initialization-actions/nifi/nifi.sh"
       timeout_sec = 600
     }
 
     initialization_action {
-      script      = "gs://procamp-infra/initialization-actions/bigdata-procamp/procamp.sh"
+      script      = "gs://infra/initialization-actions/bigdata-procamp/procamp.sh"
       timeout_sec = 600
     }
 
