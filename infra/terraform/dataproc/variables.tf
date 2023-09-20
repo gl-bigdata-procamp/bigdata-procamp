@@ -1,9 +1,9 @@
 variable "region" {
-  default = "us-east1"
+  default = "us-east4"
 }
 
 variable "zone" {
-  default = "us-east1-b"
+  default = "us-east4-b"
 }
 
 variable "project" {
