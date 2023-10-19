@@ -2,13 +2,14 @@
 
 ### Overview
 This lab has two parts:
-1. Producer side. Here the task is to extend the Apache Nifi lab and publish same messages to Apache Kafka.
-2. Consumer side. Implement logic on consumer using programming language of your choice.
+1. Producer side. Here the task is to extend the Apache Nifi lab and publish the same messages to Apache Kafka.
+2. Consumer side. Implement logic on the consumer side using a programming language of your choice.
 
 ### Task Description
-On NiFi lessons, the NiFi workflow has been presented, which reads BitCoins transactions data.
-A single transaction, converted to a string, looks like the following (where "value" is a default value for data field in Kafka):
+The goal is to write the BitCoins Transactions data to Kafka, then read this data on the consumer side and compute the top 10 transactions by the `price` field.
 
+On NiFi leacture, the NiFi workflow has been presented, which reads BitCoins transactions data.
+A single transaction, converted to a string, looks like the following (where "value" is a default value for data field in Kafka):
 ```
 {
    "data":{
@@ -26,20 +27,19 @@ A single transaction, converted to a string, looks like the following (where "va
    "event":"order_deleted"
 }
 ```
-The goal is to write the BitCoins Transactions data to Kafka, then read this data on consumer side and compute top 10 transactions by `price` field.
 
 ## Parts that should be implemented and technical constraints
-1. Bash script that creates a topic in Kafka which will be used for bitcoin transactions
-    - self descriptive name
+1. Bash script with command that creates a topic in Kafka which will be used for bitcoin transactions
+    - self-descriptive name
     - data is stored in a redundant form i.e. not a single copy
 2. Producer side.
-    - implemented using Apache Nifi out-of-the-box processors
-    - acknowledgement from all brokers is configured
+    - implemented using Apache Nifi out-of-the-box processor
+    - acknowledgment from all brokers is configured
 3. Consumer side.
     - implement using your language of choice
     - at least once delivery semantics is implemented
-    - compute top 10 bitcoin transactions based on `price` field (descending) and print them to std out
-        - maintain a collection of top 10 transactions from the beginning
+    - compute the top 10 bitcoin transactions based on the `price` field (descending) and print them to stdout
+        - maintain a collection of the top 10 transactions from the beginning
         - after each consumer poll update this collection
-        - after the update, print collection to the std out.
-4. Readme instruction is included on how to build and run your code
+        - after the update, print collection to the stdout.
+
